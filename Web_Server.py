@@ -184,14 +184,13 @@ def web_page():
     return html_webpage
 
 # Connects the ESP32 to the local network
-def do_connect():
+def do_connect(wlan):
     with open("credentials.txt", "r") as creds:
         SSID = creds.readline()
         SSID = SSID[:-1]
         print(SSID)
         PASSWORD = creds.readline()
         print(PASSWORD)
-    wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     if not wlan.isconnected():
         wlan.connect(SSID, PASSWORD)
@@ -209,7 +208,7 @@ def do_connect():
 def web_server():
     gc.collect()
     wlan = network.WLAN(network.STA_IF)  
-    do_connect()
+    do_connect(wlan)
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('', 80))
