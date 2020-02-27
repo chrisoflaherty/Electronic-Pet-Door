@@ -127,54 +127,56 @@ def web_page():
       <form action="/action_page.php" method="get">
       
       <title> AM <\title>
-      <center>12:00 AM: <input type="checkbox" name=1200AM id=AM1200 """+ pop["1200AM"] + """></center><br>
-      <center>12:30 AM: <input type="checkbox" name=1230AM id=AM1230 """ + pop["1230AM"] + """></center><br>
-      <center>1:00 AM: <input type="checkbox" name=0100AM id=AM0100 """+ pop["0100AM"] + """></center><br>
-      <center>1:30 AM: <input type="checkbox" name=0130AM id=AM0130 """ + pop["0130AM"] + """></center><br>
-      <center>2:00 AM: <input type="checkbox" name=0200AM id=AM0200 """+ pop["0200AM"] + """></center><br>
-      <center>2:30 AM: <input type="checkbox" name=0230AM id=AM0230 """ + pop["0230AM"] + """></center><br>
-      <center>3:00 AM: <input type="checkbox" name=0300AM id=AM0300 """+ pop["0300AM"] + """></center><br>
-      <center>3:30 AM: <input type="checkbox" name=0330AM id=AM0330 """ + pop["0330AM"] + """></center><br>
-      <center>4:00 AM: <input type="checkbox" name=0400AM id=AM0400 """+ pop["0400AM"] + """></center><br>
-      <center>4:30 AM: <input type="checkbox" name=0430AM id=AM0430 """ + pop["0430AM"] + """></center><br>
-      <center>5:00 AM: <input type="checkbox" name=0500AM id=AM0500 """+ pop["0500AM"] + """></center><br>
-      <center>5:30 AM: <input type="checkbox" name=0530AM id=AM0530 """ + pop["0530AM"] + """></center><br>
-      <center>6:00 AM: <input type="checkbox" name=0600AM id=AM0600 """+ pop["0600AM"] + """></center><br>
+      <center>12:00 AM: <input type="checkbox" name=1200AM id=AM1200 """ + pop["1200AM"] + """> 6:00 AM: <input type="checkbox" name=0600AM id=AM0600 """ + pop["0600AM"] + """> 12:00 PM: <input type="checkbox" name=1200PM id=PM1200 """ + pop["1200PM"] + """> 6:00 PM: <input type="checkbox" name=0600PM id=PM0600 """ + pop["0600PM"] + """></center><br>
+      <center>12:30 AM: <input type="checkbox" name=1230AM id=AM1230 """ + pop["1230AM"] + """> 6:30 AM: <input type="checkbox" name=0630AM id=AM0630 """ + pop["0630AM"] + """> 12:30 PM: <input type="checkbox" name=1230PM id=PM1230 """ + pop["1230PM"] + """> 6:30 PM: <input type="checkbox" name=0630PM id=PM0630 """ + pop["0630PM"] + """></center><br>
+      <center>1:00 AM: <input type="checkbox" name=0100AM id=AM0100 """ + pop["0100AM"] + """> 7:00 AM: <input type="checkbox" name=0700AM id=AM0700 """ + pop["0700AM"] + """> 1:00 PM: <input type="checkbox" name=0100PM id=PM0100 """ + pop["0100PM"] + """> 7:00 PM: <input type="checkbox" name=0700PM id=PM0700 """ + pop["0700PM"] + """></center><br>
+      <center>1:30 AM: <input type="checkbox" name=0130AM id=AM0130 """ + pop["0130AM"] + """> 7:30 AM: <input type="checkbox" name=0730AM id=AM0730 """ + pop["0730AM"] + """> 1:30 PM: <input type="checkbox" name=0130PM id=PM0130 """ + pop["0130PM"] + """> 7:30 PM: <input type="checkbox" name=0730PM id=PM0730 """ + pop["0730PM"] + """></center><br>
+      <center>2:00 AM: <input type="checkbox" name=0200AM id=AM0200 """ + pop["0200AM"] + """> 8:00 AM: <input type="checkbox" name=0800AM id=AM0800 """ + pop["0800AM"] + """> 2:00 PM: <input type="checkbox" name=0200PM id=PM0200 """ + pop["0200PM"] + """> 8:00 PM: <input type="checkbox" name=0800PM id=PM0800 """ + pop["0800PM"] + """></center><br>
+      <center>2:30 AM: <input type="checkbox" name=0230AM id=AM0230 """ + pop["0230AM"] + """> 8:30 AM: <input type="checkbox" name=0830AM id=AM0830 """ + pop["0830AM"] + """> 2:30 PM: <input type="checkbox" name=0230PM id=PM0230 """ + pop["0230PM"] + """> 8:30 PM: <input type="checkbox" name=0830PM id=PM0830 """ + pop["0830PM"] + """></center><br>
+      <center>3:00 AM: <input type="checkbox" name=0300AM id=AM0300 """ + pop["0300AM"] + """> 9:00 AM: <input type="checkbox" name=0900AM id=AM0900 """ + pop["0900AM"] + """> 3:00 PM: <input type="checkbox" name=0300PM id=PM0300 """ + pop["0300PM"] + """> 9:00 PM: <input type="checkbox" name=0900PM id=PM0900 """ + pop["0900PM"] + """></center><br>
+      <center>3:30 AM: <input type="checkbox" name=0330AM id=AM0330 """ + pop["0330AM"] + """> 9:30 AM: <input type="checkbox" name=0930AM id=AM0930 """ + pop["0930AM"] + """> 3:30 PM: <input type="checkbox" name=0330PM id=PM0330 """ + pop["0330PM"] + """> 9:30 PM: <input type="checkbox" name=0930PM id=PM0930 """ + pop["0930PM"] + """></center><br>
+      <center>4:00 AM: <input type="checkbox" name=0400AM id=AM0400 """ + pop["0400AM"] + """> 10:00 AM: <input type="checkbox" name=1000AM id=AM1000 """ + pop["1000AM"] + """> 4:00 PM: <input type="checkbox" name=0400PM id=PM0400 """ + pop["0400PM"] + """> 10:00 PM: <input type="checkbox" name=1000PM id=PM1000 """ + pop["1000PM"] + """></center><br>
+      <center>4:30 AM: <input type="checkbox" name=0430AM id=AM0430 """ + pop["0430AM"] + """> 10:30 AM: <input type="checkbox" name=1030AM id=AM1030 """ + pop["1030AM"] + """> 4:30 PM: <input type="checkbox" name=0430PM id=PM0430 """ + pop["0430PM"] + """> 10:30 PM: <input type="checkbox" name=1030PM id=PM1030 """ + pop["1030PM"] + """></center><br>
+      <center>5:00 AM: <input type="checkbox" name=0500AM id=AM0500 """ + pop["0500AM"] + """> 11:00 AM: <input type="checkbox" name=1100AM id=AM1100 """ + pop["1100AM"] + """> 5:00 PM: <input type="checkbox" name=0500PM id=PM0500 """ + pop["0500PM"] + """> 11:00 PM: <input type="checkbox" name=1100PM id=PM1100 """ + pop["1100PM"] + """></center><br>
+      <center>5:30 AM: <input type="checkbox" name=0530AM id=AM0530 """ + pop["0530AM"] + """> 11:30 AM: <input type="checkbox" name=1130AM id=AM1130 """ + pop["1130AM"] + """> 5:30 PM: <input type="checkbox" name=0530PM id=PM0530 """ + pop["0530PM"] + """> 11:30 PM: <input type="checkbox" name=1130PM id=PM1130 """ + pop["1130PM"] + """></center><br>
+
+      <center>6:00 AM: <input type="checkbox" name=0600AM id=AM0600 """ + pop["0600AM"] + """></center><br>
       <center>6:30 AM: <input type="checkbox" name=0630AM id=AM0630 """ + pop["0630AM"] + """></center><br>
-      <center>7:00 AM: <input type="checkbox" name=0700AM id=AM0700 """+ pop["0700AM"] + """></center><br>
+      <center>7:00 AM: <input type="checkbox" name=0700AM id=AM0700 """ + pop["0700AM"] + """></center><br>
       <center>7:30 AM: <input type="checkbox" name=0730AM id=AM0730 """ + pop["0730AM"] + """></center><br>
-      <center>8:00 AM: <input type="checkbox" name=0800AM id=AM0800 """+ pop["0800AM"] + """></center><br>
+      <center>8:00 AM: <input type="checkbox" name=0800AM id=AM0800 """ + pop["0800AM"] + """></center><br>
       <center>8:30 AM: <input type="checkbox" name=0830AM id=AM0830 """ + pop["0830AM"] + """></center><br>
-      <center>9:00 AM: <input type="checkbox" name=0900AM id=AM0900 """+ pop["0900AM"] + """></center><br>
+      <center>9:00 AM: <input type="checkbox" name=0900AM id=AM0900 """ + pop["0900AM"] + """></center><br>
       <center>9:30 AM: <input type="checkbox" name=0930AM id=AM0930 """ + pop["0930AM"] + """></center><br>
-      <center>10:00 AM: <input type="checkbox" name=1000AM id=AM1000 """+ pop["1000AM"] + """></center><br>
+      <center>10:00 AM: <input type="checkbox" name=1000AM id=AM1000 """ + pop["1000AM"] + """></center><br>
       <center>10:30 AM: <input type="checkbox" name=1030AM id=AM1030 """ + pop["1030AM"] + """></center><br>
-      <center>11:00 AM: <input type="checkbox" name=1100AM id=AM1100 """+ pop["1100AM"] + """></center><br>
+      <center>11:00 AM: <input type="checkbox" name=1100AM id=AM1100 """ + pop["1100AM"] + """></center><br>
       <center>11:30 AM: <input type="checkbox" name=1130AM id=AM1130 """ + pop["1130AM"] + """></center><br>
       <title> PM </title>
-      <center>12:00 PM: <input type="checkbox" name=1200PM id=PM1200 """+ pop["1200PM"] + """></center><br>
+      <center>12:00 PM: <input type="checkbox" name=1200PM id=PM1200 """ + pop["1200PM"] + """></center><br>
       <center>12:30 PM: <input type="checkbox" name=1230PM id=PM1230 """ + pop["1230PM"] + """></center><br>
-      <center>1:00 PM: <input type="checkbox" name=0100PM id=PM0100 """+ pop["0100PM"] + """></center><br>
+      <center>1:00 PM: <input type="checkbox" name=0100PM id=PM0100 """ + pop["0100PM"] + """></center><br>
       <center>1:30 PM: <input type="checkbox" name=0130PM id=PM0130 """ + pop["0130PM"] + """></center><br>
-      <center>2:00 PM: <input type="checkbox" name=0200PM id=PM0200 """+ pop["0200PM"] + """></center><br>
+      <center>2:00 PM: <input type="checkbox" name=0200PM id=PM0200 """ + pop["0200PM"] + """></center><br>
       <center>2:30 PM: <input type="checkbox" name=0230PM id=PM0230 """ + pop["0230PM"] + """></center><br>
-      <center>3:00 PM: <input type="checkbox" name=0300PM id=PM0300 """+ pop["0300PM"] + """></center><br>
+      <center>3:00 PM: <input type="checkbox" name=0300PM id=PM0300 """ + pop["0300PM"] + """></center><br>
       <center>3:30 PM: <input type="checkbox" name=0330PM id=PM0330 """ + pop["0330PM"] + """></center><br>
-      <center>4:00 PM: <input type="checkbox" name=0400PM id=PM0400 """+ pop["0400PM"] + """></center><br>
+      <center>4:00 PM: <input type="checkbox" name=0400PM id=PM0400 """ + pop["0400PM"] + """></center><br>
       <center>4:30 PM: <input type="checkbox" name=0430PM id=PM0430 """ + pop["0430PM"] + """></center><br>
-      <center>5:00 PM: <input type="checkbox" name=0500PM id=PM0500 """+ pop["0500PM"] + """></center><br>
+      <center>5:00 PM: <input type="checkbox" name=0500PM id=PM0500 """ + pop["0500PM"] + """></center><br>
       <center>5:30 PM: <input type="checkbox" name=0530PM id=PM0530 """ + pop["0530PM"] + """></center><br>
-      <center>6:00 PM: <input type="checkbox" name=0600PM id=PM0600 """+ pop["0600PM"] + """></center><br>
+
+      <center>6:00 PM: <input type="checkbox" name=0600PM id=PM0600 """ + pop["0600PM"] + """></center><br>
       <center>6:30 PM: <input type="checkbox" name=0630PM id=PM0630 """ + pop["0630PM"] + """></center><br>
-      <center>7:00 PM: <input type="checkbox" name=0700PM id=PM0700 """+ pop["0700PM"] + """></center><br>
+      <center>7:00 PM: <input type="checkbox" name=0700PM id=PM0700 """ + pop["0700PM"] + """></center><br>
       <center>7:30 PM: <input type="checkbox" name=0730PM id=PM0730 """ + pop["0730PM"] + """></center><br>
-      <center>8:00 PM: <input type="checkbox" name=0800PM id=PM0800 """+ pop["0800PM"] + """></center><br>
+      <center>8:00 PM: <input type="checkbox" name=0800PM id=PM0800 """ + pop["0800PM"] + """></center><br>
       <center>8:30 PM: <input type="checkbox" name=0830PM id=PM0830 """ + pop["0830PM"] + """></center><br>
-      <center>9:00 PM: <input type="checkbox" name=0900PM id=PM0900 """+ pop["0900PM"] + """></center><br>
+      <center>9:00 PM: <input type="checkbox" name=0900PM id=PM0900 """ + pop["0900PM"] + """></center><br>
       <center>9:30 PM: <input type="checkbox" name=0930PM id=PM0930 """ + pop["0930PM"] + """></center><br>
-      <center>10:00 PM: <input type="checkbox" name=1000PM id=PM1000 """+ pop["1000PM"] + """></center><br>
+      <center>10:00 PM: <input type="checkbox" name=1000PM id=PM1000 """ + pop["1000PM"] + """></center><br>
       <center>10:30 PM: <input type="checkbox" name=1030PM id=PM1030 """ + pop["1030PM"] + """></center><br>
-      <center>11:00 PM: <input type="checkbox" name=1100PM id=PM1100 """+ pop["1100PM"] + """></center><br>
+      <center>11:00 PM: <input type="checkbox" name=1100PM id=PM1100 """ + pop["1100PM"] + """></center><br>
       <center>11:30 PM: <input type="checkbox" name=1130PM id=PM1130 """ + pop["1130PM"] + """></center><br>
 
       <center><input type="submit" value="Submit" id="subbutt" name=submit> <input type="submit" value="Submit and Close" id="closebutt" name=closed></center>
