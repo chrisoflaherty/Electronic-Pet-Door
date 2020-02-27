@@ -126,6 +126,7 @@ def web_page():
     
       <form action="/action_page.php" method="get">
       
+      <title> AM <\title>
       <center>12:00 AM: <input type="checkbox" name=1200AM id=AM1200 """+ pop["1200AM"] + """></center><br>
       <center>12:30 AM: <input type="checkbox" name=1230AM id=AM1230 """ + pop["1230AM"] + """></center><br>
       <center>1:00 AM: <input type="checkbox" name=0100AM id=AM0100 """+ pop["0100AM"] + """></center><br>
@@ -150,7 +151,7 @@ def web_page():
       <center>10:30 AM: <input type="checkbox" name=1030AM id=AM1030 """ + pop["1030AM"] + """></center><br>
       <center>11:00 AM: <input type="checkbox" name=1100AM id=AM1100 """+ pop["1100AM"] + """></center><br>
       <center>11:30 AM: <input type="checkbox" name=1130AM id=AM1130 """ + pop["1130AM"] + """></center><br>
-
+      <title> PM </title>
       <center>12:00 PM: <input type="checkbox" name=1200PM id=PM1200 """+ pop["1200PM"] + """></center><br>
       <center>12:30 PM: <input type="checkbox" name=1230PM id=PM1230 """ + pop["1230PM"] + """></center><br>
       <center>1:00 PM: <input type="checkbox" name=0100PM id=PM0100 """+ pop["0100PM"] + """></center><br>
@@ -190,6 +191,7 @@ def do_connect():
         print(SSID)
         PASSWORD = creds.readline()
         print(PASSWORD)
+    wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     if not wlan.isconnected():
         wlan.connect(SSID, PASSWORD)
