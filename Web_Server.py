@@ -226,7 +226,7 @@ def web_server():
         print('Content = %s' % request)
         tempor = request.split()
         if tempor[1].find("closed=Submit+and+Close") > 0:
-            ntptime.settime()
+            ntptime.settime() #function to pass to external rtc
             rtc = RTC()
             with open("gottime.txt", "w") as gottime:
                 gottime.write("1")
