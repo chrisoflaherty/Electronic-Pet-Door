@@ -7,10 +7,9 @@ import network
 import esp32
 import gc
 import urequests
-import ujson
 
 # HTML web page the user will see
-def web_page():
+def ap_web_page():
     html_webpage = """<!DOCTYPE HTML><html>
     <head>
       <title>Electronic Pet Door</title>
@@ -79,7 +78,7 @@ def access_point():
             print("Closing Access Point. Storing Credentials.")
             break
         print('Content = %s' % request)
-        response = web_page()
+        response = ap_web_page()
         conn.send('HTTP/1.1 200 OK\n')
         conn.send('Content-Type: text/html\n')
         conn.send('Connection: close\n\n')
