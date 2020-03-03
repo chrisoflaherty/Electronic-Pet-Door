@@ -183,13 +183,17 @@ def get_schedule():
             q = f.readline()
             if q == '0':
                 sched["1200"+ampm] = 0
+                pop["1200"+ampm] = 0
             else:
                 sched["1200"+ampm] = 1
+                pop["1200"+ampm] = 1
             q = f.readline()
             if q == '0':
                 sched["1230"+ampm] = 0
+                pop["1230"+ampm] = 0
             else:
                 sched["1230"+ampm] = 0
+                pop["1230"+ampm] = 0
             
             for i in range(1,12,1):
                 if i < 10:
