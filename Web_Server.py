@@ -28,19 +28,15 @@ def printTime(currtime):
 def populate_schedule():
     with open("schedule.txt", "w+") as f:
         for x in range(2):
-            if x == 0:
-                ampm = 'AM'
-            else:
-                ampm = 'PM'
-            f.write("1200" + ampm + " 0\n")
-            f.write("1230" + ampm + " 0\n")
+            f.write("0\n")
+            f.write("0\n")
             for i in range(1,12,1):
                 if i < 10:
-                    f.write("0" + str(i) + "00" + ampm + " 0\n")
-                    f.write("0" + str(i) + "30" + ampm + " 0\n")
+                    f.write("0\n")
+                    f.write("0\n")
                 else:
-                    f.write(str(i) + "00" + ampm + " 0\n")
-                    f.write(str(i) + "30" + ampm + " 0\n")
+                    f.write("0\n")
+                    f.write("0\n")
 
 # Writes the schedule to the schedule.txt file
 def export_schedule(sched):
@@ -50,15 +46,15 @@ def export_schedule(sched):
                 ampm = 'AM'
             else:
                 ampm = 'PM'
-            f.write("1200" + ampm + " " + str(sched["1200"+ampm]) + "\n")
-            f.write("1230" + ampm + " " + str(sched["1230"+ampm]) + "\n")
+            f.write(str(sched["1200"+ampm]) + "\n")
+            f.write(str(sched["1230"+ampm]) + "\n")
             for i in range(1,12,1):
                 if i < 10:
-                    f.write("0" + str(i) + "00" + ampm + " " + str(sched["0" + str(i) + "00" + ampm]) + "\n")
-                    f.write("0" + str(i) + "30" + ampm + " " + str(sched["0" + str(i) + "30" + ampm]) + "\n")
+                    f.write(str(sched["0" + str(i) + "00" + ampm]) + "\n")
+                    f.write(str(sched["0" + str(i) + "30" + ampm]) + "\n")
                 else:
-                    f.write(str(i) + "00" + ampm + " " + str(sched[str(i) + "00" + ampm]) + "\n")
-                    f.write(str(i) + "30" + ampm + " " + str(sched[str(i) + "30" + ampm]) + "\n")
+                    f.write(str(sched[str(i) + "00" + ampm]) + "\n")
+                    f.write(str(sched[str(i) + "30" + ampm]) + "\n")
 
 # Retrieves the schedule data from the schedule.txt file
 def get_schedule():
