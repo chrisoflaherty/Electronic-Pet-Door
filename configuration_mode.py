@@ -10,10 +10,6 @@ import urequests
 from machine import RTC
 import ntptime
 
-# Web Server global dictionaries
-sched = {} # Schedule dictionary
-pop= {} # Web page dictionary
-
 #######################################
 ######## Access point MODE ############
 #######################################
@@ -122,6 +118,12 @@ def access_point():
 #####################################
 ######## WEB SERVER MODE ############
 #####################################
+    
+# Web Server global dictionaries
+sched = {} # Schedule dictionary
+pop= {} # Web page dictionary
+    
+# Reset button
     
 # For the reset button
 def reset_credentials():
@@ -329,6 +331,10 @@ def web_server():
     sched = get_schedule()
 
     while True:
+        with open("credentials.txt", "r") as creds:
+            if creads.read == "":
+                print("Reset button clicked.\n")
+                break
         conn, addr = s.accept()
         print('Got a connection from %s' % str(addr))
         request = conn.recv(1024)
@@ -367,6 +373,7 @@ def web_server():
     
 def main():
     # First must figure out if there are WiFi credentials
+    
     with open("credentials.txt", "r") as creds:
         if creds.read() == "":
             # Access Point mode
@@ -375,5 +382,8 @@ def main():
         else:
             # Web Server mode
             web_server()
+
+reset_button.irq(trigger=Pin.IRQ_RISING, handler=reset_credentials)
+        
 
 
