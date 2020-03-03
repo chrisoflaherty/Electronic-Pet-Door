@@ -122,6 +122,11 @@ def access_point():
 #####################################
 ######## WEB SERVER MODE ############
 #####################################
+    
+# For the reset button
+def reset_credentials():
+    with open("credentials.txt", "w") as file:
+        pass
 
 # Prints the current time from the RTC
 def printTime(currtime):
