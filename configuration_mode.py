@@ -2,7 +2,7 @@
 # Christopher O'Flaherty
 
 import usocket as socket
-from ure import sub
+import ure
 import network
 import gc
 from machine import RTC
@@ -99,8 +99,8 @@ def access_point():
     PASSWORD = request[int(request.find("&password="))+10: request.find(" HTTP/1.1\r\nHost:")]
     PASSWORD = PASSWORD.split(" ")
     PASSWORD = PASSWORD[0]
-    USERNAME = sub("\+", " ", USERNAME)
-    PASSWORD = sub("\+", " ", PASSWORD)
+    USERNAME = ure.sub("\+", " ", USERNAME)
+    PASSWORD = ure.sub("\+", " ", PASSWORD)
     print("Username= " + USERNAME + "\nPassword= " + PASSWORD)
 
     # Write the USERNAME and PASSWORD to the file
@@ -404,9 +404,9 @@ def web_server():
         conn.close()
             
     wlan.active(False)
-    wlan.disconnect()
     s.close()
     gc.collect()
+    
 
 
 ###################################
@@ -420,6 +420,7 @@ def config_main():
         if creds.read() == "":
             # Access Point mode
             access_point()
+            web_server()
             
         else:
             # Web Server mode
