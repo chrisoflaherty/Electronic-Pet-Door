@@ -181,14 +181,14 @@ def get_schedule():
             else:
                 ampm = 'PM'
             q = f.readline()
-            if q == '0':
+            if q == '0\n':
                 sched["1200"+ampm] = 0
                 pop["1200"+ampm] = ""
             else:
                 sched["1200"+ampm] = 1
                 pop["1200"+ampm] = "checked"
             q = f.readline()
-            if q == '0':
+            if q == '0\n':
                 sched["1230"+ampm] = 0
                 pop["1230"+ampm] = ""
             else:
@@ -198,14 +198,14 @@ def get_schedule():
             for i in range(1,12,1):
                 if i < 10:
                     q = f.readline()
-                    if q == '0':
+                    if q == '0\n':
                         sched["0" + str(i) + "00" + ampm] = 0
                         pop["0" + str(i) + "00" + ampm] = ""
                     else:
                         sched["0" + str(i) + "00" + ampm] = 1
                         pop["0" + str(i) + "00" + ampm] = "checked"
                     q = f.readline()
-                    if q == '0':
+                    if q == '0\n':
                         sched["0" + str(i) + "30" + ampm] = 0
                         pop["0" + str(i) + "30" + ampm] = ""
                     else:
@@ -213,7 +213,7 @@ def get_schedule():
                         pop["0" + str(i) + "30" + ampm] = "checked"
                 else:
                     q = f.readline()
-                    if q == '0':
+                    if q == '0\n':
                         sched[str(i) + "00" + ampm] = 0
                         pop[str(i) + "00" + ampm] = ""
                     else:
@@ -221,7 +221,7 @@ def get_schedule():
                         pop[str(i) + "00" + ampm] = "checked"
                     
                     q = f.readline()
-                    if q == '0':
+                    if q == '0\n':
                         sched[str(i) + "30" + ampm] = 0
                         pop[str(i) + "30" + ampm] = ""
                     else:
