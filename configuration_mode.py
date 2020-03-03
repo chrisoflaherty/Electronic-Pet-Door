@@ -143,15 +143,15 @@ def printTime(currtime):
 def populate_schedule():
     with open("schedule.txt", "w+") as f:
         for x in range(2):
-            f.write(" 0\n")
-            f.write(" 0\n")
+            f.write("0\n")
+            f.write("0\n")
             for i in range(1,12,1):
                 if i < 10:
-                    f.write(" 0\n")
-                    f.write(" 0\n")
+                    f.write("0\n")
+                    f.write("0\n")
                 else:
-                    f.write(" 0\n")
-                    f.write(" 0\n")
+                    f.write("0\n")
+                    f.write("0\n")
 
 # Writes the schedule to the schedule.txt file
 def export_schedule(sched):
