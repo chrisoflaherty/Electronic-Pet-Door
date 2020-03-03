@@ -366,6 +366,11 @@ def web_server():
     gc.collect()
     wlan = network.WLAN(network.STA_IF)  
     do_connect(wlan)
+    
+    ntptime.settime() #function to pass to external rtc
+    with open("gottime.txt", "w") as gottime:
+        gottime.write("1")
+    #printTime(rtc.datetime())
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('', 80))
@@ -385,11 +390,6 @@ def web_server():
         print('Content = %s' % request)
         tempor = request.split()
         if tempor[1].find("closed=Submit+and+Close") > 0:
-            ntptime.settime() #function to pass to external rtc
-            rtc = RTC()
-            with open("gottime.txt", "w") as gottime:
-                gottime.write("1")
-            printTime(rtc.datetime())
             export_schedule(sched)
             
             conn.close()
