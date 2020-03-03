@@ -2,11 +2,9 @@
 # Christopher O'Flaherty
 
 import usocket as socket
-import ure
+from ure import sub
 import network
-import esp32
 import gc
-import urequests
 from machine import RTC
 import ntptime
 
@@ -101,8 +99,8 @@ def access_point():
     PASSWORD = request[int(request.find("&password="))+10: request.find(" HTTP/1.1\r\nHost:")]
     PASSWORD = PASSWORD.split(" ")
     PASSWORD = PASSWORD[0]
-    USERNAME = ure.sub("\+", " ", USERNAME)
-    PASSWORD = ure.sub("\+", " ", PASSWORD)
+    USERNAME = sub("\+", " ", USERNAME)
+    PASSWORD = sub("\+", " ", PASSWORD)
     print("Username= " + USERNAME + "\nPassword= " + PASSWORD)
 
     # Write the USERNAME and PASSWORD to the file
@@ -114,7 +112,6 @@ def access_point():
     gc.collect()
     
     
-    
 #####################################
 ######## WEB SERVER MODE ############
 #####################################
@@ -124,6 +121,7 @@ sched = {} # Schedule dictionary
 pop= {} # Web page dictionary
     
 # Reset button
+#reset_button = 
     
 # For the reset button
 def reset_credentials():
@@ -177,15 +175,55 @@ def export_schedule(sched):
 def get_schedule():
     sched = {}
     with open("schedule.txt", "r") as f:
-        for x in range(48):
-            i = f.readline()
-            i = i.split()
-            if i[1] == '0':
-                sched[i[0]] = 0
-                pop[i[0]] = ""
+        for x in range(2):
+            if x == 0:
+                ampm = 'AM'
             else:
-                sched[i[0]] = 1
-                pop[i[0]] = "checked"
+                ampm = 'PM'
+            q = f.readline()
+            if q == '0':
+                sched["1200"+ampm] = 0
+            else:
+                sched["1200"+ampm] = 1
+            q = f.readline()
+            if q == '0':
+                sched["1230"+ampm] = 0
+            else:
+                sched["1230"+ampm] = 0
+            
+            for i in range(1,12,1):
+                if i < 10:
+                    q = f.readline()
+                    if q == '0':
+                        sched["0" + str(i) + "00" + ampm] = 0
+                        pop["0" + str(i) + "00" + ampm] = ""
+                    else:
+                        sched["0" + str(i) + "00" + ampm] = 1
+                        pop["0" + str(i) + "00" + ampm] = "checked"
+                    q = f.readline()
+                    if q == '0':
+                        sched["0" + str(i) + "30" + ampm] = 0
+                        pop["0" + str(i) + "30" + ampm] = ""
+                    else:
+                        sched["0" + str(i) + "30" + ampm] = 1
+                        pop["0" + str(i) + "30" + ampm] = "checked"
+                else:
+                    q = f.readline()
+                    if q == '0':
+                        sched[str(i) + "00" + ampm] = 0
+                        pop[str(i) + "00" + ampm] = ""
+                    else:
+                        sched[str(i) + "00" + ampm] = 1
+                        pop[str(i) + "00" + ampm] = "checked"
+                    
+                    q = f.readline()
+                    if q == '0':
+                        sched[str(i) + "30" + ampm] = 0
+                        pop[str(i) + "30" + ampm] = ""
+                    else:
+                        sched[str(i) + "30" + ampm] = 1
+                        pop[str(i) + "30" + ampm] = "checked"
+
     return sched
 
 # Updates the schedule and webpage dictionaries base on the HTTP GET return
@@ -371,7 +409,7 @@ def web_server():
 ######## Main Function ############
 ###################################
     
-def main():
+def config_main():
     # First must figure out if there are WiFi credentials
     
     with open("credentials.txt", "r") as creds:
@@ -381,9 +419,10 @@ def main():
             
         else:
             # Web Server mode
+            reset_button.irq(trigger=Pin.IRQ_RISING, handler=reset_credentials)
             web_server()
 
-reset_button.irq(trigger=Pin.IRQ_RISING, handler=reset_credentials)
+
         
 
 
