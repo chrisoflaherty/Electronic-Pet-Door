@@ -280,10 +280,8 @@ def ws_web_page():
       
     </head>
     <body>
-    
-      <form action="/action_page.php" method="get">
-      
       <title> AM <\title>
+      <form action="/action_page.php" method="get">
       <center>12:00 AM: <input type="checkbox" name=1200AM id=AM1200 """ + pop["1200AM"] + """></center><br>
       <center>12:30 AM: <input type="checkbox" name=1230AM id=AM1230 """ + pop["1230AM"] + """></center><br>
       <center>1:00 AM: <input type="checkbox" name=0100AM id=AM0100 """ + pop["0100AM"] + """></center><br>
@@ -309,7 +307,11 @@ def ws_web_page():
       <center>10:30 AM: <input type="checkbox" name=1030AM id=AM1030 """ + pop["1030AM"] + """></center><br>
       <center>11:00 AM: <input type="checkbox" name=1100AM id=AM1100 """ + pop["1100AM"] + """></center><br>
       <center>11:30 AM: <input type="checkbox" name=1130AM id=AM1130 """ + pop["1130AM"] + """></center><br>
+      <center><input type="submit" value="Submit" id="subbutt" name=submit></center>
+    </form>
+
       <title> PM </title>
+    <form action="/action_page.php" method="get">
       <center>12:00 PM: <input type="checkbox" name=1200PM id=PM1200 """ + pop["1200PM"] + """></center><br>
       <center>12:30 PM: <input type="checkbox" name=1230PM id=PM1230 """ + pop["1230PM"] + """></center><br>
       <center>1:00 PM: <input type="checkbox" name=0100PM id=PM0100 """ + pop["0100PM"] + """></center><br>
@@ -336,8 +338,11 @@ def ws_web_page():
       <center>11:00 PM: <input type="checkbox" name=1100PM id=PM1100 """ + pop["1100PM"] + """></center><br>
       <center>11:30 PM: <input type="checkbox" name=1130PM id=PM1130 """ + pop["1130PM"] + """></center><br>
 
-      <center><input type="submit" value="Submit" id="subbutt" name=submit> <input type="submit" value="Submit and Close" id="closebutt" name=closed></center>
-    </form> <form action="/action_page.php" method="get"></form>
+      <center><input type="submit" value="Submit" id="subbutt" name=submit>
+    </form>
+    <form action="/action_page.php" method="get">
+      <center><input type="submit" value="Submit and Close" id="closebutt" name=closed></center>
+    </form>
     </body>
     </html>"""
     return html_webpage
