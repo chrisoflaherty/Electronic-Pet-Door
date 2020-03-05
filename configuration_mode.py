@@ -7,6 +7,7 @@ import network
 import gc
 from machine import RTC
 import ntptime
+from time import sleep
 
 #######################################
 ######## Access point MODE ############
@@ -375,10 +376,18 @@ def web_server():
     wlan = network.WLAN(network.STA_IF)  
     do_connect(wlan)
     
-    ntptime.settime() #function to pass to external rtc
-    with open("gottime.txt", "w") as gottime:
-        gottime.write("1")
-    #printTime(rtc.datetime())
+    while True:
+        try:
+            ntptime.settime()
+            print("NTP do work.\n")
+            with open("gottime.txt", "w") as gottime:
+                gottime.write("1")
+                #printTime(rtc.datetime())
+            break
+        except:
+            sleep(5)
+            print("NTP no work. Hold on trying again.\n")
+    
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(('', 80))
@@ -428,6 +437,7 @@ def config_main():
         if creds.read() == "":
             # Access Point mode
             access_point()
+            sleep(5)
             web_server()
             
         else:
